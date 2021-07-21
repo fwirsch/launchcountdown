@@ -1,0 +1,68 @@
+@import './utils/variables';
+
+html.w-mod-touch * {
+  background-attachment: scroll !important;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+
+  font: {
+    family: $main-font-family;
+    weight: $main-font-weight;
+    size: $main-font-size;
+  }
+}
+
+a {
+  text-decoration: none;
+  transition: $transition;
+  color: $primary-color-grayish-blue;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: $primary-color-soft-red;
+    cursor: pointer;
+  }
+}
+
+p {
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.d-table {
+  width: 100%;
+  height: 100%;
+
+  &-cell {
+    vertical-align: middle;
+  }
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $color-black;
+  font-family: $heading-font-family;
+}
+
+img {
+  max-width: 100%;
+}

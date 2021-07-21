@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+/* # Front-end Style Guide */
+
+/* ## Colors */
+
+/* ### Primary */
+$primary-color-grayish-blue: hsl(237, 18%, 59%);
+$primary-color-soft-red: hsl(345, 95%, 68%);
+
+/* ### Neutral */
+$neutral-color-white: hsl(0, 0%, 100%);
+$neutral-color-dark-desaturated-blue: hsl(236, 21%, 26%);
+$neutral-color-very-dark-blue: hsl(235, 16%, 14%);
+$neutral-color-very-darker-blue: hsl(234, 17%, 12%);
+
+$color-black: #000000;
+
+/* ## Typography */
+/* ### Font */
+
+$main-font-family: "Red Hat Text";
+$main-font-size: 14px;
+$main-font-weight: 700;
+
+$heading-font-family: $main-font-family;
+$transition: 0.5s;

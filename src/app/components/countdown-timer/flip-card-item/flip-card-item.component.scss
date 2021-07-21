@@ -1,0 +1,230 @@
+@import 'assets/styles/utils/variables';
+
+$flip-card-width: 200px;
+$flip-card-height: 200px;
+$flip-space-between: 1.3rem;
+
+$label-font-size: 1rem;
+$label-margin-top: 2rem;
+$label-letter-spacing: .4rem;
+
+$flip-border-radius: .5rem;
+$flip-box-shadow: 0px 12px 0px $neutral-color-very-dark-blue;
+
+$flip-color-card-up: #2c2c44;
+$flip-color-card-down: #34364f;
+
+$flip-color-font-card-up: #cf536f;
+$flip-color-font-card-down: #fa5e85;
+
+
+.flip-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+
+  &__inner {
+    display: flex;
+    height: $flip-card-height;
+    width: $flip-card-width;
+    margin: 0 $flip-space-between;
+  }
+
+  &__static {
+    position: absolute;
+    height: $flip-card-height;
+    width: $flip-card-width;
+  }
+
+  &__dynamic {
+    position: absolute;
+    height: $flip-card-height / 2;
+    width: $flip-card-width;
+    perspective: 400px;
+
+    &__inner {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transform-style: preserve-3d;
+      transform-origin: 50% 100%;
+    }
+
+    &__front,
+    &__back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      overflow: hidden;
+      border-radius: $flip-border-radius;
+    }
+
+    &__back {
+      transform: rotateX(180deg);
+    }
+  }
+
+  &__up,
+  &__down {
+    text-align: center;
+    height: $flip-card-height / 2;
+    overflow: hidden;
+    border-radius: $flip-border-radius;
+
+    > div {
+      font-size: $flip-card-height / 2;
+      font-weight: 800;
+      line-height: $flip-card-height;
+      align-self: center;
+    }
+  }
+
+  &__down > div {
+    margin-top: -($flip-card-height / 2);
+  }
+
+  &__dynamic__front,
+  &__up {
+    background-color: $flip-color-card-up;
+    color: $flip-color-font-card-up;
+  }
+
+  &__dynamic__back,
+  &__down {
+    background-color: $flip-color-card-down;
+    color: $flip-color-font-card-down;
+  }
+
+  &__up {
+    box-shadow: 0px -1px 0px $neutral-color-very-dark-blue inset;
+  }
+
+  &__down {
+    box-shadow: 0px 12px 0px $neutral-color-very-dark-blue;
+  }
+
+  &__label {
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: $label-margin-top;
+    font-size: $label-font-size;
+    letter-spacing: $label-letter-spacing;
+    color: $primary-color-grayish-blue;
+  }
+}
+
+// Mobile
+@media (max-width: 374.98px) {
+  $flip-card-width: 70px;
+  $flip-card-height: 70px;
+
+  $label-font-size: .5rem;
+  $label-margin-top: 1rem;
+  $label-letter-spacing: .2rem;
+
+  $flip-space-between: .3rem;
+  $flip-box-shadow: 0px 6px 0px $neutral-color-very-dark-blue;
+
+  .flip-card {
+    &__inner {
+      height: $flip-card-height;
+      width: $flip-card-width;
+      margin: 0 $flip-space-between;
+    }
+
+    &__static {
+      height: $flip-card-height;
+      width: $flip-card-width;
+    }
+
+    &__dynamic {
+      height: $flip-card-height / 2;
+      width: $flip-card-width;
+
+      &__front,
+      &__back {
+        border-radius: $flip-border-radius;
+      }
+    }
+
+    &__up,
+    &__down {
+      height: $flip-card-height / 2;
+      border-radius: $flip-border-radius;
+
+      > div {
+        font-size: $flip-card-height / 2;
+        line-height: $flip-card-height;
+      }
+    }
+
+    &__down > div {
+      margin-top: -($flip-card-height / 2);
+    }
+
+    &__down {
+      box-shadow: $flip-box-shadow;
+    }
+
+    &__label {
+      font-size: $label-font-size;
+      margin-top: $label-margin-top;
+      letter-spacing: $label-letter-spacing;
+    }
+  }
+}
+
+// Desktop
+@media (min-width: 375px) and (max-width: 1440px) {
+  $flip-card-width: 200px;
+  $flip-card-height: 200px;
+
+  .flip-card {
+    &__inner {
+      height: $flip-card-height;
+      width: $flip-card-width;
+      margin: 0 $flip-space-between;
+    }
+
+    &__static {
+      height: $flip-card-height;
+      width: $flip-card-width;
+    }
+
+    &__dynamic {
+      height: $flip-card-height / 2;
+      width: $flip-card-width;
+
+      &__front,
+      &__back {
+        border-radius: $flip-border-radius;
+      }
+    }
+
+    &__up,
+    &__down {
+      height: $flip-card-height / 2;
+      border-radius: $flip-border-radius;
+
+      > div {
+        font-size: $flip-card-height / 2;
+        line-height: $flip-card-height;
+      }
+    }
+
+    &__down > div {
+      margin-top: -($flip-card-height / 2);
+    }
+
+    &__label {
+      font-size: $label-font-size;
+      margin-top: $label-margin-top;
+    }
+  }
+}

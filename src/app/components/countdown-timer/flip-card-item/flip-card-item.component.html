@@ -1,0 +1,27 @@
+<div class="flip-card">
+  <div class="flip-card__inner">
+    <div class="flip-card__static">
+      <div class="flip-card__up">
+        <div>{{value}}</div>
+      </div>
+      <div class="flip-card__down">
+        <div>{{oldValue}}</div>
+      </div>
+    </div>
+    <div class="flip-card__dynamic">
+      <div class="flip-card__dynamic__inner" [@flip]="value" (@flip.done)="flipDone()">
+        <div class="flip-card__dynamic__front">
+          <div class="flip-card__up">
+            <div>{{oldValue}}</div>
+          </div>
+        </div>
+        <div class="flip-card__dynamic__back">
+          <div class="flip-card__down">
+            <div>{{value}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flip-card__label" *ngIf="label">{{label}}</div>
+</div>
