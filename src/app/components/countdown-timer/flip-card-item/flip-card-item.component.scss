@@ -119,8 +119,7 @@ $flip-color-font-card-down: #fa5e85;
   }
 }
 
-// Mobile
-@media (max-width: 374.98px) {
+@media (max-width: 569.98px)  {
   $flip-card-width: 70px;
   $flip-card-height: 70px;
 
@@ -146,11 +145,6 @@ $flip-color-font-card-down: #fa5e85;
     &__dynamic {
       height: $flip-card-height / 2;
       width: $flip-card-width;
-
-      &__front,
-      &__back {
-        border-radius: $flip-border-radius;
-      }
     }
 
     &__up,
@@ -180,8 +174,101 @@ $flip-color-font-card-down: #fa5e85;
   }
 }
 
-// Desktop
-@media (min-width: 375px) and (max-width: 1440px) {
+@media (min-width: 570px) and (max-width: 771.98px) {
+  $flip-card-width: 100px;
+  $flip-card-height: 100px;
+
+  $label-font-size: .6rem;
+  $label-margin-top: 1.2rem;
+  $label-letter-spacing: .2rem;
+
+  .flip-card {
+    &__inner {
+      height: $flip-card-height;
+      width: $flip-card-width;
+      margin: 0 $flip-space-between;
+    }
+
+    &__static {
+      height: $flip-card-height;
+      width: $flip-card-width;
+    }
+
+    &__dynamic {
+      height: $flip-card-height / 2;
+      width: $flip-card-width;
+    }
+
+    &__up,
+    &__down {
+      height: $flip-card-height / 2;
+      border-radius: $flip-border-radius;
+
+      > div {
+        font-size: $flip-card-height / 2;
+        line-height: $flip-card-height;
+      }
+    }
+
+    &__down > div {
+      margin-top: -($flip-card-height / 2);
+    }
+
+    &__label {
+      font-size: $label-font-size;
+      margin-top: $label-margin-top;
+    }
+  }
+}
+
+@media (min-width: 772px) and (max-width: 992.98px) {
+  $flip-card-width: 150px;
+  $flip-card-height: 150px;
+
+  $label-font-size: .8rem;
+  $label-margin-top: 1.4rem;
+  $label-letter-spacing: .2rem;
+
+  .flip-card {
+    &__inner {
+      height: $flip-card-height;
+      width: $flip-card-width;
+      margin: 0 $flip-space-between;
+    }
+
+    &__static {
+      height: $flip-card-height;
+      width: $flip-card-width;
+    }
+
+    &__dynamic {
+      height: $flip-card-height / 2;
+      width: $flip-card-width;
+    }
+
+    &__up,
+    &__down {
+      height: $flip-card-height / 2;
+      border-radius: $flip-border-radius;
+
+      > div {
+        font-size: $flip-card-height / 2;
+        line-height: $flip-card-height;
+      }
+    }
+
+    &__down > div {
+      margin-top: -($flip-card-height / 2);
+    }
+
+    &__label {
+      font-size: $label-font-size;
+      margin-top: $label-margin-top;
+    }
+  }
+}
+
+@media (min-width: 993px) and (max-width: 1440px) {
   $flip-card-width: 200px;
   $flip-card-height: 200px;
 
@@ -200,11 +287,6 @@ $flip-color-font-card-down: #fa5e85;
     &__dynamic {
       height: $flip-card-height / 2;
       width: $flip-card-width;
-
-      &__front,
-      &__back {
-        border-radius: $flip-border-radius;
-      }
     }
 
     &__up,
