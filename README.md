@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://bitbucket.org/fwirsch/launchcountdown/src/master/](https://bitbucket.org/fwirsch/launchcountdown/src/master/)
+- Solution URL: [https://github.com/fwirsch/launchcountdown](https://github.com/fwirsch/launchcountdown)
 
 ### Built with
 
